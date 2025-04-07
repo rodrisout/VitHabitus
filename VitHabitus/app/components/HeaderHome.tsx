@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import SettingsMenu from '../components/ui/SettingsMenu';
 
 export default function HeaderHome() {
+
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <View style={styles.header}>
       <View style={styles.profileSection}>
@@ -15,9 +19,11 @@ export default function HeaderHome() {
         style={styles.logo}
         resizeMode="contain"
       />
-      <TouchableOpacity style={styles.settingsButton}>
+      <TouchableOpacity style={styles.settingsButton} onPress={() => setShowMenu(true)}>
         <Ionicons name="settings-outline" size={24} color="#333" />
       </TouchableOpacity>
+
+      <SettingsMenu visible={showMenu} onClose={() => setShowMenu(false)} />
     </View>
   );
 }

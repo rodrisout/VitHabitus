@@ -26,28 +26,10 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="home"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" size={size} color={color} />
-          ),
-          headerShown: false,
-          tabBarButton: (props) => (
-            <Pressable
-              {...props}
-              onPress={() => {
-                router.replace('/home');
-              }}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
         name="habits"
         options={{
           title: 'Hábitos',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size }:{ color: string; size: number }) => (
             <Ionicons name="bulb-outline" size={size} color={color} />
           ),
         }}
@@ -56,7 +38,7 @@ export default function TabLayout() {
         name="recommender"
         options={{
           title: 'Resultados',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon:({ color, size }:{ color: string; size: number }) => (
             <Ionicons name="list-outline" size={size} color={color} />
           ),
         }}
@@ -65,7 +47,7 @@ export default function TabLayout() {
         name="notes"
         options={{
           title: 'Notas',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size }:{ color: string; size: number }) => (
             <Ionicons name="document-text-outline" size={size} color={color} />
           ),
         }}
@@ -74,7 +56,7 @@ export default function TabLayout() {
         name="calendar"
         options={{
           title: 'Calendario',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size }:{ color: string; size: number }) => (
             <Ionicons name="calendar-outline" size={size} color={color} />
           ),
         }}

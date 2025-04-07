@@ -3,11 +3,13 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 
 
 interface HeaderProps {
+    title?: string;
     subtitle?: string;
+    highlightText?: string;
   }
 
 
-export const Header = ({ subtitle }: HeaderProps) => (
+export const Header = ({ title,subtitle, highlightText }: HeaderProps) => (
     <View style={styles.header}>
       <Image
         alt="App Logo"
@@ -16,7 +18,7 @@ export const Header = ({ subtitle }: HeaderProps) => (
         source={require('../../../assets/images/logo_inside1x.png')}
       />
       <Text style={styles.title}>
-        Sign in to <Text style={{ color: '#075eec' }}>VitHabitus</Text>
+        {title} <Text style={{ color: '#075eec' }}>{highlightText}</Text>
       </Text>
       <Text style={styles.subtitle}>{subtitle}</Text>
     </View>

@@ -7,17 +7,41 @@ import {
   View,
   Text,
   TouchableOpacity,
-  TextInput,
   ScrollView,
   KeyboardAvoidingView,
   Platform,
+  Alert,
 } from 'react-native';
+import { signIn } from '../services/authService';
+import { useRouter } from 'expo-router';
+import {saveSession} from '../services/Session'
+
+//ui
+import LoaderOverlay from '../app/components/ui/Loader';
 
 export default function LoginScreen() {
   const [form, setForm] = useState({
     email: '',
     password: '',
   });
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  const handleLogin = async() => {
+    setLoading(true);
+    try{
+      const user = await signIn(form.email, form.password);
+      console.log('Usuario logueado', user.email);
+      saveSession(user.uid);
+      router.replace('/home');
+
+    }catch (error: any){
+      Alert.alert('Error de inicio de sesion', error.message);
+    }
+    finally{
+      setLoading(false);
+    }
+  }
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#e8ecf4' }}>
@@ -27,11 +51,11 @@ export default function LoginScreen() {
       >
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
           <View style={styles.container}>
-            <Header subtitle="Bienvenido" />
+          <Header title= "Bienvenido a" highlightText="VitHabitus"/>
 
             <View style={styles.form}>
               <FormInput
-                label="Email address"
+                label="Correo electrónico"
                 autoCapitalize="none"
                 autoCorrect={false}
                 clearButtonMode="while-editing"
@@ -42,7 +66,7 @@ export default function LoginScreen() {
               />
 
               <FormInput
-                label="Password"
+                label="Contraseña"
                 autoCorrect={false}
                 clearButtonMode="while-editing"
                 onChangeText={(password) => setForm({ ...form, password })}
@@ -52,27 +76,29 @@ export default function LoginScreen() {
               />
 
               <View style={styles.formAction}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={handleLogin}>
                   <View style={styles.btn}>
-                    <Text style={styles.btnText}>Sign in</Text>
+                    <Text style={styles.btnText}>Iniciar Sesión</Text>
                   </View>
                 </TouchableOpacity>
               </View>
 
               <TouchableOpacity>
-                <Text style={styles.formLink}>Forgot password?</Text>
+                <Text style={styles.formLink}>Olvidó su contraseña?</Text>
               </TouchableOpacity>
             </View>
 
-            <TouchableOpacity style={styles.footerButton}>
+            <TouchableOpacity style={styles.footerButton} onPress={() => router.push('/register') }>
               <Text style={styles.formFooter}>
                 Don't have an account?{' '}
-                <Text style={{ textDecorationLine: 'underline' }}>Sign up</Text>
+                <Text style={{ textDecorationLine: 'underline' }}>Crear cuenta</Text>
               </Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
+
+      {loading && <LoaderOverlay />}
     </SafeAreaView>
   );
 }
