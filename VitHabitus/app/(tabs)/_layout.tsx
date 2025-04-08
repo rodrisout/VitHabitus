@@ -23,12 +23,13 @@ export default function TabLayout() {
         headerStyle: {
           backgroundColor: '#fff',
         },
+        tabBarHideOnKeyboard: true,
       }}
     >
       <Tabs.Screen
         name="habits"
         options={{
-          title: 'Hábitos',
+          title: '',
           tabBarIcon: ({ color, size }:{ color: string; size: number }) => (
             <Ionicons name="bulb-outline" size={size} color={color} />
           ),
