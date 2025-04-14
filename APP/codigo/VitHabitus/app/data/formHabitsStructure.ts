@@ -1,5 +1,5 @@
 import profesiones from './profesiones.json';
-//estrucutra para el formulario de habitos
+
 export const habitFormStructure = [
     {
       key: 'info_general',
