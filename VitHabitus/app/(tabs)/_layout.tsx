@@ -19,7 +19,7 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: '#2196F3',
         tabBarInactiveTintColor: '#666',
-        headerTitleAlign: 'left',
+        headerTitleAlign: 'center',
         headerStyle: {
           backgroundColor: '#fff',
         },
@@ -29,7 +29,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="habits"
         options={{
-          title: '',
+          headerTitle: 'Tus Hábitos', 
+          tabBarLabel: 'habits',
           tabBarIcon: ({ color, size }:{ color: string; size: number }) => (
             <Ionicons name="bulb-outline" size={size} color={color} />
           ),

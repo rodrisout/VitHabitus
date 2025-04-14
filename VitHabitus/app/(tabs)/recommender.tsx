@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet } from 'react-native';
+import useAuthRedirect from '../components/login/authRedirect';
 
 export default function RecommenderScreen() {
+  useAuthRedirect();
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Recommender Screen</Text>

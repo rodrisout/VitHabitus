@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Header from './components/login/Header';
 import FormInput from './components/login/FormInput';
+import { useEffect } from 'react';
+import { BackHandler } from 'react-native';
 import {
   StyleSheet,
   SafeAreaView,
@@ -20,6 +22,12 @@ import {saveSession} from '../services/Session'
 import LoaderOverlay from '../app/components/ui/Loader';
 
 export default function LoginScreen() {
+  useEffect(() => {
+    const blockBack = () => true;
+    const handler = BackHandler.addEventListener('hardwareBackPress', blockBack);
+  
+    return () => handler.remove();
+  }, []);
   const [form, setForm] = useState({
     email: '',
     password: '',

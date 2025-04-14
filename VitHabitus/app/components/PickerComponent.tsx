@@ -6,7 +6,8 @@ interface PickerComponentProps {
   label: string;
   selectedValue: string;
   onValueChange: (value: string) => void;
-  data: string[];
+  data: { label: string; value: string }[];
+  pickerStyle?: object;
 }
 
 export default function PickerComponent({
@@ -14,11 +15,12 @@ export default function PickerComponent({
   selectedValue,
   onValueChange,
   data,
+  pickerStyle,
 }: PickerComponentProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
-      <View style={styles.inputWrapper}>
+      <View style={[styles.inputWrapper, pickerStyle]}>
         <Picker
           selectedValue={selectedValue}
           onValueChange={onValueChange}
@@ -27,8 +29,8 @@ export default function PickerComponent({
         >
           <Picker.Item label={`Selecciona ${label.toLowerCase()}...`} value="" />
           {data.map((item) => (
-            <Picker.Item key={item} label={item} value={item} />
-          ))}
+            <Picker.Item key={item.value} label={item.label} value={item.value} />
+            ))}
         </Picker>
       </View>
     </View>

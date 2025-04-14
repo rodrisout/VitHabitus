@@ -36,12 +36,14 @@ export default function Register() {
     const { email, password, nombre, apellido, pais } = form;
     if (!email || !password || !nombre || !apellido || !pais) {
       Alert.alert('Campos obligatorios', 'Por favor, complete todos los campos.');
+      setLoading(false);
       return;
     }
     
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       Alert.alert('Correo no válido', 'Introduce un correo electrónico válido.');
+      setLoading(false);
       return;
     }
 
@@ -52,6 +54,7 @@ export default function Register() {
       'Contraseña no segura',
       'La contraseña debe tener al menos 8 caracteres: una letra mayúscula, una letra minúscula y un número.'
       );
+      setLoading(false);
     return;
     }
     
@@ -109,7 +112,7 @@ export default function Register() {
                 label="País"
                 selectedValue={form.pais}
                 onValueChange={(pais) => setForm({ ...form, pais })} 
-                data={countries}   
+                data={countries.map((c) => ({ label: c, value: c }))}  
               />
               <FormInput
                 label="Correo electrónico*"

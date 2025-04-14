@@ -14,6 +14,7 @@ interface Props {
 export default function SettingsMenu({ visible, onClose }: Props) {
   const handleLogout = async () => {
     await signOut(auth);
+    console.log('Usuario deslogueado');
     await clearSession();
     onClose();
     router.replace('/login');

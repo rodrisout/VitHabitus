@@ -4,8 +4,10 @@ import { Stack } from 'expo-router';
 import BotonAccion from './components/BotonAccion';
 import HeaderHome from './components/HeaderHome';
 import SectionsHome from './components/SectionsHome';
+import useAuthRedirect from './components/login/authRedirect';
 
 export default function HomeScreen() {
+  useAuthRedirect();
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
