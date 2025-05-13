@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
 import { Stack } from 'expo-router';
 import BotonAccion from './components/BotonAccion';
@@ -6,8 +7,14 @@ import HeaderHome from './components/HeaderHome';
 import SectionsHome from './components/SectionsHome';
 import useAuthRedirect from './components/login/authRedirect';
 
+import { verifyWithApi } from '../services/verifyApi';
+
 export default function HomeScreen() {
   useAuthRedirect();
+
+  useEffect(() => {
+    verifyWithApi();
+  }, []);
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
@@ -26,7 +33,7 @@ export default function HomeScreen() {
             icon="list-outline"
             text="Resultados"
             color="#2196F3"
-            href="/(tabs)/recommender"
+            href="/(tabs)/results"
           />
           <BotonAccion
             icon="document-text-outline"

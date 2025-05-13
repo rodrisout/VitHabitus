@@ -37,7 +37,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="recommender"
+        name="results"
         options={{
           title: 'Resultados',
           tabBarIcon:({ color, size }:{ color: string; size: number }) => (

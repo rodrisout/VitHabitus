@@ -46,7 +46,8 @@
       },
       "eas": {
         "projectId": "21ccaa73-813d-430b-b2f9-7c26ece9c57e"
-      }
+      },
+      "apiUrl": "http://192.168.0.15:8080"
     },
     "owner": "rodrisout"
   }

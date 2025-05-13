@@ -6,7 +6,6 @@ const firebaseConfig = {
   apiKey: "AIzaSyAdeJdobY7GFp_cRsy2yFR54CECGtE5558",
   authDomain: "vithabitus.firebaseapp.com",
   projectId: "vithabitus",
-  storageBucket: "vithabitus.firebasestorage.app",
   messagingSenderId: "517135163757",
   appId: "1:517135163757:web:050c75d0083dd3db9fba64",
   measurementId: "G-91D6ZNG6BM"

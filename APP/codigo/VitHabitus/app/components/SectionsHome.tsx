@@ -13,7 +13,7 @@ export default function SectionsHome() {
     <>
       <Section 
         title="Últimos Resultados"
-        seeAllLink="/(tabs)/recommender"
+        seeAllLink="/(tabs)/results"
         emptyText="Sin resultados"
       />
       <Section 
