@@ -1,0 +1,81 @@
+\chapter{Introducción}
+\label{cap:introduccion}
+
+\chapterquote{Cualquiera que sostenga una opinión verdadera sobre un tema que no entiende, es como un hombre ciego en el camino correcto}{Sócrates}
+
+\section{Motivación}
+En los ultimos años, la conciencia de las personas por mantener un estilo de vida saludable ha ido en aumento. Debido principalmente a que países con gran relevancia se han visto gravemente afectados por la creciente presencia de enfermedades como el sobrepeso, la obesidad y sus consecuencias en la salud a largo plazo. \cite{oms}
+
+Sin embargo, no para todas las personas ni en todas las situaciones es fácil identificar el problema o encontrar los hábitos que hay que moficar, así como la manera de hacerlo. Es por eso, que el campo de la nutrición ha experimentado un desarrollo en los últimos años, no solo con el aumento de profesionales si no también, con el avance de nuevas tecnologías que facilitan la tarea. \cite{scielo}
+
+La proliferación de relojes, sensores, aplicaciones móviles,etc. Han proporcionado a las personas herramientas con las cuales pueden autoevaluarse  a pesar de carecer de un enfoque realmente individualizado y personal. Es por ello que surge la necesidad de desarrollar, sistemas y algoritmos ajustables que permitan realizar recomendaciones precisas en base a la situación de cada individuo. \cite{Science_direct}
+
+Este Trabajo de Fin de Grado surge con la motivación de fusionar esta rama de la salud basada en los hábitos de las personas, con el desarrollo de software. Creando una aplicación que otorge a los usuarios la capacidad de utilizar un algoritmo evolutivo para mejorar sus habítos semanales de la forma más personal posible. 
+
+  
+
+
+\section{Objetivos}
+El principal objetivo de este trabajo es diseñar e implementar una aplicación móvil compatible con software android y ios, que funcione como un asistente personalizable de hábitos saludables, combinando un diseño simple e intuitivo  junto con un sistema de recomendación entrenado basado en un algoritmo evolutivo.
+
+Entre los principales objetivos de este proyecto se encuentran:
+\begin{itemize}
+    \item Desarrollar la estructura de la aplicación móvil con el framework React Native y el entorno de desarrollo Expo.
+    \item Desarrollar una interfaz intuitiva y simple que divida en categorías los hábitos.
+    \item Desarrollar un sistema de autenticación robusto mediante Firebase.
+    \item Implementar una base de datos en Firestore para la gestión de información de los usuarios.
+    \item Implementar una API REST en spring boot que integre el algoritmo evolutivo "recomendador".
+    \item Garantizar la sincronización segura de los datos y el funcionamiento en diferentes dispositivos.
+\end{itemize}
+    
+
+\section{Plan de trabajo}
+Para poder conseguir cada uno de los objetivos, se ha desarrollado un plan de trabajo para afrontarlos de la mejor manera posible:
+\subsection{Estrcuctura y entorno de desarrollo}
+\begin{itemize}
+    \item Con el fin de obtener el mejor resultado posible, se investigó sobre el mejor framework que recogiese las condiciones. React Native.(\cite{info_framework}).
+    \item Se definió la estructura general de la app, componentes, apariencia general,etc.
+    \item Uso de Expo para poder ejecutar y probar la aplicación.
+\end{itemize}
+
+\subsection{Interfaz intuitiva}
+\begin{itemize}
+    \item Investigación de otras aplicaciones móviles para obtener referencias sobre interfaces simples e intuitivas.
+    \item Uso de Figma para desarrollar componentes visuales aplicables al coódigo.
+\end{itemize}
+
+\subsection{Autenticación}
+\begin{itemize}
+    \item Investigación sobre la plataforma que mejor se adapte al objetivo. Firebase
+    \item Creación de una cuenta en la plataforma y sincronización con la aplicación
+    \item Desarrollo de las diferentes pantallas y componentes necesarios para el correcto funcionamiento de la autenticación segura.
+\end{itemize}
+
+\subsection{Base de Datos}
+\begin{itemize}
+    \item Uso de la cuenta de Firebase para la creación de la base de datos con Firestore con una base de datos noSql.
+    \item implementación de la estructura de las colecciones y documentos que se almacenarán.
+\end{itemize}
+
+\subsection{API REST}
+\begin{itemize}
+    \item Uso de Spring Boot Suite(STS) para desarrollar la API con formato el rest
+    \item Implementación del código del recomendador, adaptandolo a los requisitos de la API y la conexión con la base de datos
+    \item Vinculación e integración correcta y segura con la aplicación móvil.
+\end{itemize}
+
+\subsection{Sincronización}
+\begin{itemize}
+    \item Garantizar correcto funcionamiento constante de la API y de Firebase.
+    \item Investigación sobre Expo y sus funcionalidades multiplataformas para un correcto funcionamiento en ambos sistemas operativos.
+\end{itemize}
+
+\section{Recomendador de Hábitos Saludables}
+
+El sistema de recomendación utilizado en esta aplicación ha sido desarrollado y entrenado previamente en el contexto de un Trabajo de Fin de Grado de los grados de Ingenieria Informática y de Software en la Universidad Complutense de Madrid. Titulado \textbf{"Recomendador de Hábitos para reducir el riesgo de padecer Sobrepeso y Obesidad"}, realizado por \textbf{Fan Ye y Daniel Martínez}, bajo la dirección de Jose Ignacio Hidalgo Pérez.
+
+El recomendador conforma el núcleo funcional de la aplicación. Es el encargado de procesar los hábitos que el usuario haya itnroducido y generar en consecuencia ciertas recomendaciones personalizadas orientas en mejorar la salud y reducir la obesidad.
+Este sistema de recomendación está basado en un algoritmo evolutivo y en el uso de ciertos modelos para obtener un coeficiente ORI (Obesity Risk Index,Indice de Riesgo de Obesidad) que represente la calidad de los hábitos.
+
+Finalmente se realizó una integración de este recomendador en la aplicación mediante el desarrollo de la API rest en el entorno de Spring Boot Suite.
+

@@ -1,0 +1,71 @@
+\begin{thebibliography}{13}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Axarnet(2025)}]{info_framework}
+{\sc Axarnet}.
+\newblock Plataformas de desarrollo de aplicaciones móviles.
+\newblock 2025.
+
+\bibitem[{EXPO(2025{\natexlab{a}})}]{eas}
+{\sc EXPO}.
+\newblock Expo application services.
+\newblock 2025{\natexlab{a}}.
+
+\bibitem[{EXPO(2025{\natexlab{b}})}]{expo_docs}
+{\sc EXPO}.
+\newblock Guides: Overview.
+\newblock 2025{\natexlab{b}}.
+
+\bibitem[{Firebase(2025)}]{firebase_docs}
+{\sc Firebase, G.}
+\newblock Documentación firebase.
+\newblock 2025.
+
+\bibitem[{Francesc~Alòs(2021)}]{Science_direct}
+{\sc Francesc~Alòs, A. P.-R.}
+\newblock Uso de wearables y aplicaciones móviles.
+\newblock 2021.
+
+\bibitem[{IBM(2025)}]{ibm_info}
+{\sc IBM}.
+\newblock ¿qué es el desarrollo de aplicaciones móviles?
+\newblock 2025.
+
+\bibitem[{Ismael San Mauro~Martín1(2014)}]{scielo}
+{\sc Ismael San Mauro~Martín1, M. G. F. y. L. C.~Y., 2}.
+\newblock Aplicaciones móviles en nutrición, dietética y hábitos
+  saludables.
+\newblock 2014.
+
+\bibitem[{web officialNodeJS(2025)}]{nodejs}
+{\sc web officialNodeJS}.
+\newblock Manual de nodejs.
+\newblock 2025.
+
+\bibitem[{web~official React~Native(2025)}]{react_native}
+{\sc web~official React~Native}.
+\newblock Manual de react native.
+\newblock 2025.
+
+\bibitem[{web~official Spring~Boot(2025{\natexlab{a}})}]{sts}
+{\sc web~official Spring~Boot}.
+\newblock Manual de spring boot.
+\newblock 2025{\natexlab{a}}.
+
+\bibitem[{web~official Spring~Boot(2025{\natexlab{b}})}]{sts_rest}
+{\sc web~official Spring~Boot}.
+\newblock Manual de spring boot rest.
+\newblock 2025{\natexlab{b}}.
+
+\bibitem[{World Health~Organization(2024)}]{oms}
+{\sc World Health~Organization, W.}
+\newblock Obesity and overweight.
+\newblock 2024.
+
+\bibitem[{Ye~Fan(2025)}]{tfg_recomendador}
+{\sc Ye~Fan, M.~D.}
+\newblock Recomendador de hábitos para reducir el riesgo de padecer sobrepeso
+  y obesidad.
+\newblock 2025.
+
+\end{thebibliography}

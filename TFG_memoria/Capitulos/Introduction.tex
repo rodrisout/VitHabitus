@@ -1,0 +1,90 @@
+\chapter*{Introduction}
+\label{cap:introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+Introduction to the subject area. This chapter contains the translation of Chapter \ref{cap:introduccion}.
+
+\section*{Motivation}
+In recent years, the awareness of people to maintain a healthy lifestyle has been increasing. This is mainly due to the fact that countries with high relevance have been seriously affected by the growing presence of diseases such as overweight, obesity and their long-term health consequences. \cite{oms}
+
+However, not for all people or in all situations it is easy to identify the problem or to find the habits to mitigate. That is why the field of nutrition has experienced a development in recent years, not only with the increase of professionals but also with the advance of new technologies that facilitate the task. \cite{scielo}
+
+The proliferation of watches, sensors, mobile applications, etc. The time has provided people with tools with which they can evaluate themselves despite lacking a truly custom and personal approach. This is why there is a need to develop adjustable systems and algorithms that allow precise recommendations to be made based on each individual's situation. 
+
+\cite{Science_direct}
+
+This bachelor's Thesis begins with the motivation to merge this branch of health based on the habits of people, with the development of software. Creating an application that gives users the ability to use an evolutionary algorithm to improve their weekly habits in the most personal way possible.
+
+\section*{Objectives}
+
+The main objective of this work is to design and implement a mobile application compatible with android and iOS software, which works as a customizable healthy habits assistant, combining a simple and intuitive design together with a trained recommendation system based on an evolutionary algorithm.
+
+Between the main objectives of this project we hightlight:
+\begin{itemize}
+    \item Develop the mobile app using the React Native framework and the Expo development environment.
+    \item Develop an intuitive and simple interface that divides habits into categories.
+    \item Develop a robust authentication system using Firebase.
+    \item Implement a database in Firestore for managing user information.
+    \item Implement a REST API in spring boot that integrates the evolutionary algorithm ‘recommender’.
+    \item Ensure the secure data synchronization and operation across devices.
+\end{itemize}
+
+\section*{Work Plan}
+
+In order to achieve the objectives, a work plan has been developed to get them in the best possible way:
+
+\subsection*{Structure and development environment}
+
+\begin{itemize}
+    \item In order to obtain the best possible result, A research was done about React Native, the best framework that would approach the conditions wanted. (\cite{info_framework}).
+    \item The general structure of the app, components, general appearance, etc. was defined.
+    \item Use of Expo to be able to run and test the application.
+\end{itemize}
+
+\subsection*{Intuitive interface}
+\begin{itemize}
+    \item Research of other mobile applications to get references on simple and intuitive interfaces.
+    \item Use of Figma to develop visual components applicable to the code.
+\end{itemize}
+
+\subsection*{Authentication}
+\begin{itemize}
+    \item Research on the platform that best suits the objective. Firebase.
+    \item Creation of an account on the platform and synchronization with the application.
+    \item Development of the different screens and components necessary for the correct work of the secure authentication.
+\end{itemize}
+
+\subsection*{Database}
+\begin{itemize}
+    \item Use of the Firebase account for the creation of the database with Firestore with a noSql database.
+    \item Implementation of the structure of the collections and documents to be stored.
+\end{itemize}
+
+\subsection*{API REST}
+\begin{itemize}
+    \item Use of Spring Boot Suite(STS) to develop the API with rest format
+    \item Implementation of the recommender code, adapting it to the requirements of the API and the connection with the database
+    \item Correct and secure linking and integration with the mobile application.
+\end{itemize}
+
+\subsection*{Synchronisation}
+\begin{itemize}
+    \item Ensuring consistent correct functioning of the API and Firebase.
+    \item Research on Expo and its cross-platform functionalities for a correct functioning in both operating systems.
+\end{itemize}
+
+\section*{Healthy Habits Recommender}
+
+The recommendation system used in this application has been previously developed and trained in the context of a bachelor's Thesis of the Computer and Software Engineering degrees at the Complutense University o Madrid. Entitled "Habits Recommender to reduce the risk of overweight and obesity", carried out by Fan Ye and Daniel Martínez, under the supervision
+of Jose Ignacio Hidalgo Pérez.
+
+The recommender forms the functional core of the application. It is
+responsible for processing the habits that the user has produced and
+consequently generating certain custom recommendations aimed to improving
+health and reducing obesity
+This recommendation system is based on an evolutionary algorithm and the
+use of certain models to obtain an ORI (Obesity Risk Index) coefficient
+that represents the quality of the habits.
+Finally, this recommender was integrated into the application by
+developing the API rest in the Spring Boot Suite environment.
+
