@@ -1,0 +1,36 @@
+# Ignorar node_modules (Expo ya instala dependencias en el servidor)
+node_modules
+
+# Ignorar el control de versiones
+.git
+.gitignore
+
+# Archivos temporales
+*.log
+*.tmp
+*.bak
+.DS_Store
+
+# Carpeta de caché de Metro bundler
+.expo
+
+# Archivos de configuración de entorno local
+.env
+.env.local
+.env.*.local
+
+# Archivos de builds locales
+build/
+dist/
+web-build/
+android/
+ios/
+
+# Activos pesados opcionales
+assets/raw/
+assets/videos/
+assets/tmp/
+
+# Editor config
+.vscode/
+.idea/

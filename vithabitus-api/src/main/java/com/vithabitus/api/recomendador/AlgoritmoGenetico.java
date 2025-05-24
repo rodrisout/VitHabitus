@@ -16,8 +16,8 @@ public class AlgoritmoGenetico{
     private Individuo original;
 
     public AlgoritmoGenetico(Individuo og){
-        this.tamPoblacion = 100;
-        this.maxGeneraciones = 100;
+        this.tamPoblacion =60;
+        this.maxGeneraciones = 60;
         this.probCruce = 0.8;
         this.probMutacion = 0.05;
         this.elitismo = 0.02;

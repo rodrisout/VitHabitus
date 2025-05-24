@@ -34,7 +34,7 @@ export const habitFormStructure = [
           ],
         },
         {
-          key: 'economico', label: 'Nivel económico', type: 'picker',
+          key: 'estEconomico', label: 'Nivel económico', type: 'picker',
           options: [
             { label: 'Menos de 1000€/mes', value: '1' },
             { label: 'Entre 1000 y 2000€/mes', value: '2' },
@@ -56,7 +56,7 @@ export const habitFormStructure = [
           ],
         },
         {
-          key: 'sueño', label: 'Horas de sueño diarias', type: 'numeric',
+          key: 'horDormir', label: 'Horas de sueño diarias', type: 'numeric',
         },
       ],
     },
@@ -79,23 +79,23 @@ export const habitFormStructure = [
           ],
         },
         {
-            key: 'ex_desconocer', label: '¿Recuerdas cuánto tiempo llevas sin fumar?', type: 'picker',
+            key: 'exfumadorNOSABE', label: '¿Recuerdas cuánto tiempo llevas sin fumar?', type: 'picker',
             options: [
                { label: 'Sí', value: '1' },
                { label: 'No', value: '0' },
             ],
         },
         {
-            key: 'ex_sinfumar', label: 'Años sin fumar', type: 'numeric',
+            key: 'exfumadorA', label: 'Años sin fumar', type: 'numeric',
         },  
         {
-          key: 'fuma_cigarrillos', label: 'Consumo cigarrillos al día', type: 'numeric',
+          key: 'fumadorConsumo', label: 'Consumo de cigarrillos al día', type: 'numeric',
         },
         {
-          key: 'fuma_pipa', label: 'Consumo de tabaco de pipa al día (pipas al día)', type: 'numeric',
+          key: 'pipa', label: 'Consumo de tabaco de pipa al día (pipas al día)', type: 'numeric',
         },
         {
-          key: 'fuma_puros', label: 'Consumo de puros al día', type: 'numeric',
+          key: 'puros', label: 'Consumo de puros al día', type: 'numeric',
         },
       ],
     },
@@ -104,50 +104,50 @@ export const habitFormStructure = [
         title: 'Información dietética',
         fields: [
           {
-            key: 'aceite', label: 'Consumo diario de aceite de Oliva (1 ración = 1 cucharada sopera)', type: 'numeric',
+            key: 'consumoAceiteOliva', label: 'Consumo diario de aceite de Oliva (1 ración = 1 cucharada sopera)', type: 'numeric',
           },
           {
-            key: 'verdura', label: 'Consumo diario de verduras ( acompañamiento es media ración, 0.5)', type: 'numeric',
+            key: 'consumoVerdura', label: 'Consumo diario de verduras ( acompañamiento es media ración, 0.5)', type: 'numeric',
           },
           {
-            key: 'fruta', label: 'Consumo diario de fruta (zumo cuenta como 1)', type: 'numeric',
+            key: 'consumoFruta', label: 'Consumo diario de fruta (zumo cuenta como 1)', type: 'numeric',
           },
           {
-            key: 'carne_roja', label: 'Consumo diario de carne roja( 1ración 100/150g)', type: 'numeric',
+            key: 'consumoCarne', label: 'Consumo diario de carne roja( 1ración 100/150g)', type: 'numeric',
           },
           {
-            key: 'mantequilla', label: 'Consumo diario de mantequilla (1 ración son 12g)', type: 'numeric',
+            key: 'consumoMantequilla', label: 'Consumo diario de mantequilla (1 ración son 12g)', type: 'numeric',
           },
           {
-            key: 'refrescos', label: 'Consumo diario de refrescos', type: 'numeric',
+            key: 'consumoRefrescos', label: 'Consumo diario de refrescos', type: 'numeric',
           },
           {
-            key: 'legumbres', label: 'Consumo semanal de legumbres (1 ración, 150g) ', type: 'numeric',
+            key: 'consumoLegumbres', label: 'Consumo semanal de legumbres (1 ración, 150g) ', type: 'numeric',
           },
           {
-            key: 'pescado', label: 'Consumo semanal de pescado (1 ración 100/150g o 4 piezas de marisco)', type: 'numeric',
+            key: 'consumoPescado', label: 'Consumo semanal de pescado (1 ración 100/150g o 4 piezas de marisco)', type: 'numeric',
           },
           {
-            key: 'reposteria', label: 'Consumo semanal de reposteria insdustrial', type: 'numeric',
+            key: 'consumoReposteria', label: 'Consumo semanal de reposteria insdustrial', type: 'numeric',
           },
           {
-            key: 'frutos_secos', label: 'Consumo semanal de frutos secos (1 ración, 30g)', type: 'numeric',
+            key: 'consumoFSecos', label: 'Consumo semanal de frutos secos (1 ración, 30g)', type: 'numeric',
           },
           {
-            key: 'carne_blanca', label: '¿Su consumo semanal de carne blanca excede el de carne roja?',
+            key: 'consumoPollo', label: '¿Su consumo semanal de carne blanca excede el de carne roja?',
             options: [
                 { label: 'Sí', value: '1' },
                 { label: 'No', value: '0' },
              ],
           },
           {
-            key: 'sofrito', label: 'Consumo semanal de sofrito, salsas, etc', type: 'numeric',
+            key: 'consumoSofrito', label: 'Consumo semanal de sofrito, salsas, etc', type: 'numeric',
           },
           {
-            key: 'lacteos', label: 'Consumo diario de lácteos (1 ración es una taza de leche, un yogurt, etc', type: 'numeric',
+            key: 'consumoLacteo', label: 'Consumo diario de lácteos (1 ración es una taza de leche, un yogurt, etc', type: 'numeric',
           },
           {
-            key: 'lacteos_desnatados', label: '¿Consume más productos lácteos desnatados que normales?', 
+            key: 'consumoDesnatado', label: '¿Consume más productos lácteos desnatados que normales?', 
             options: [
                 { label: 'Sí', value: '1' },
                 { label: 'No', value: '0' },
@@ -161,33 +161,33 @@ export const habitFormStructure = [
         title: 'Consumo Alcohol',
         fields: [
           {
-            key: 'destilados', label: '¿Consume alcoholes destilados?',
+            key: 'alcoholDestilado', label: '¿Consume alcoholes destilados?',
             options: [
                 { label: 'Sí', value: '1' },
                 { label: 'No', value: '0' },
              ],
           },
           {
-            key: 'copas_destilados', label: 'Número de copas de alcoholes destilados (semanales)', type: 'numeric',
+            key: 'copasAlcoholDestilado', label: 'Número de copas de alcoholes destilados (semanales)', type: 'numeric',
           },
           {
-            key: 'fermentados', label: '¿Consume alcoholes fermentados?',
+            key: 'alcoholFermentado', label: '¿Consume alcoholes fermentados?',
             options: [
                 { label: 'Sí', value: '1' },
                 { label: 'No', value: '0' },
              ],
           },
           {
-            key: 'copas_fermentados', label: 'Número de copas de alcoholes fermentados (semanales)', type: 'numeric',
+            key: 'copasAlcoholFermentado', label: 'Número de copas de alcoholes fermentados (semanales)', type: 'numeric',
           },
           {
-            key: 'copas_vinotinto', label: 'Número de copas de vino tinto (semanales)', type: 'numeric',
+            key: 'copasVinoTinto', label: 'Número de copas de vino tinto (semanales)', type: 'numeric',
           },
           {
-            key: 'copas_vinoblanco', label: 'Número de copas de vino blanco (semanales)', type: 'numeric',
+            key: 'copasVinoBlanco', label: 'Número de copas de vino blanco (semanales)', type: 'numeric',
           },
           {
-            key: 'copas_vinorosado', label: 'Número de copas de vino rosado (semanales)', type: 'numeric',
+            key: 'copasVinoRosado', label: 'Número de copas de vino rosado (semanales)', type: 'numeric',
           },
         ],
       },
@@ -203,70 +203,70 @@ export const habitFormStructure = [
                 ]
             },
             {
-                key: 'cancer_mama', label: '¿Cáncer de mama?', type: 'picker',
+                key: 'cancerMama', label: '¿Cáncer de mama?', type: 'picker',
                 options: [
                   { label: 'Sí', value: '1' },
                   { label: 'No', value: '0' }
                 ]
             },
             {
-                key: 'cancer_colon', label: '¿Cáncer de colon?', type: 'picker',
+                key: 'cancerColon', label: '¿Cáncer de colon?', type: 'picker',
                 options: [
                     { label: 'Sí', value: '1' },
                     { label: 'No', value: '0' }
                 ]
             },
             {
-                key: 'cancer_prostata', label: '¿Cáncer de próstata?', type: 'picker',
+                key: 'cancerProstata', label: '¿Cáncer de próstata?', type: 'picker',
                 options: [
                     { label: 'Sí', value: '1' },
                     { label: 'No', value: '0' }
                 ]
             },
             {
-                key: 'cancer_pulmon', label: '¿Cáncer de pulmón?', type: 'picker',
+                key: 'cancerPulmon', label: '¿Cáncer de pulmón?', type: 'picker',
                 options: [
                     { label: 'Sí', value: '1' },
                     { label: 'No', value: '0' }
                 ]
             },
             {
-                key: 'cancer_otro', label: '¿Otro tipo de cáncer?', type: 'picker',
+                key: 'cancerOtro', label: '¿Otro tipo de cáncer?', type: 'picker',
                 options: [
                     { label: 'Sí', value: '1' },
                     { label: 'No', value: '0' }
                 ]
             },
             {
-                key: 'infarto_miocardio', label: 'Infarto de miocardio',
+                key: 'infartoMiocardio', label: 'Infarto de miocardio',
                 options: [
                     { label: 'Sí', value: '1' },
                     { label: 'No', value: '0' },
                  ],
             },
             {
-                key: 'angina', label: 'Angina de pecho',
+                key: 'anginaPecho', label: 'Angina de pecho',
                 options: [
                     { label: 'Sí', value: '1' },
                     { label: 'No', value: '0' },
                     ],
             },
             {
-                key: 'insuficiencia_cardiaca', label: 'Insuficiencia cardíaca',
+                key: 'insuficienciaCardiaca', label: 'Insuficiencia cardíaca',
                 options: [
                     { label: 'Sí', value: '1' },
                     { label: 'No', value: '0' },
                 ],
             },
             {
-                key: 'diabetes', label: 'Diabetes tipo 2',
+                key: 'diabetesT2', label: 'Diabetes tipo 2',
                 options: [
                     { label: 'Sí', value: '1' },
                     { label: 'No', value: '0' },
                 ],
             },
             {
-                key: 'metabólico', label: 'Sindrome metabólico',
+                key: 'sindMetabolico', label: 'Sindrome metabólico',
                 options: [
                     { label: 'Sí', value: '1' },
                     { label: 'No', value: '0' },
@@ -287,7 +287,7 @@ export const habitFormStructure = [
                 ],
             },
             {
-                key: 'bronquitis', label: 'Bronquitis crónica',
+                key: 'EPOC', label: 'Bronquitis crónica',
                 options: [
                     { label: 'Sí', value: '1' },
                     { label: 'No', value: '0' },
@@ -300,16 +300,16 @@ export const habitFormStructure = [
         title: 'Actividad física',
         fields: [
           {
-            key: 'ejercicioIntenso', label: 'Ejercicio intenso (min/sem)', type: 'numeric',
+            key: 'ejercicioIntensoMinutosSemana', label: 'Ejercicio intenso (min/sem)', type: 'numeric',
           },
           {
-            key: 'ejercicioModerado', label: 'Ejercicio moderado (min/sem)', type: 'numeric',
+            key: 'ejercicioModeradoMinutosSemana', label: 'Ejercicio moderado (min/sem)', type: 'numeric',
           },
           {
-            key: 'caminar', label: 'Caminar (min/sem)', type: 'numeric',
+            key: 'ejercicioCaminadoMinutosSemana', label: 'Caminar (min/sem)', type: 'numeric',
           },
           {
-            key: 'sentado', label: 'Minutos sentado por día', type: 'numeric',
+            key: 'sentadoMinutos', label: 'Minutos sentado por día', type: 'numeric',
           },
         ],
       },

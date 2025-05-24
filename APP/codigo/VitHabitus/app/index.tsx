@@ -13,7 +13,7 @@ export default function Index() {
 
       if (uid) {
         console.log('Usuario recordado:', uid);
-        setIsLoggedIn(true); // redirigimos a home
+        setIsLoggedIn(true);
       }
 
       setUserChecked(true);

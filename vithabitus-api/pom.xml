@@ -11,7 +11,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	</parent>
 	<groupId>com.vithabitus</groupId>
 	<artifactId>api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>VitHabitus_1.0.0</version>
 	<name>vithabitus-api</name>
 	<description>API REST para vitHabitus</description>
 	<url/>

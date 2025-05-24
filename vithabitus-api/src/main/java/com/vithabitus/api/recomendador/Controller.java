@@ -1,9 +1,4 @@
 package com.vithabitus.api.recomendador;
-import Launcher.Main;
-
-import javax.swing.*;
-import java.io.BufferedWriter;
-import java.io.IOException;
 
 public class Controller{
     private AlgoritmoGenetico ag;

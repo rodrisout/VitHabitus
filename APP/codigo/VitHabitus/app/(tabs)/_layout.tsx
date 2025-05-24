@@ -1,7 +1,6 @@
 import React from 'react';
 import { Tabs, router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { Pressable } from 'react-native';
 import { BackHandler } from 'react-native';
 
 export default function TabLayout() {
@@ -30,7 +29,7 @@ export default function TabLayout() {
         name="habits"
         options={{
           headerTitle: 'Tus Hábitos', 
-          tabBarLabel: 'habits',
+          tabBarLabel: 'habitos',
           tabBarIcon: ({ color, size }:{ color: string; size: number }) => (
             <Ionicons name="bulb-outline" size={size} color={color} />
           ),

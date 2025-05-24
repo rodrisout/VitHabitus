@@ -18,7 +18,7 @@ public class LectorModelos {
         InputStream is = LectorModelos.class.getResourceAsStream("/data/modelosDemo.csv");
         
         if (is == null) {
-            throw new RuntimeException("❌ No se encontró el archivo modelosDemo.csv en /resources/data/");
+            throw new RuntimeException("No se encontró el archivo modelosDemo.csv en /resources/data/");
         }
        
         InputStreamReader  fr = new InputStreamReader(is);

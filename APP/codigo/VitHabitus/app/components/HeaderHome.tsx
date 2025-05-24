@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import SettingsMenu from '../components/ui/SettingsMenu';
+import SettingsMenu from '../SettingsMenu';
+import { router } from 'expo-router';
 
 export default function HeaderHome() {
 
@@ -10,9 +11,11 @@ export default function HeaderHome() {
   return (
     <View style={styles.header}>
       <View style={styles.profileSection}>
+        <TouchableOpacity onPress={() => router.push('/perfil')}>
         <View style={styles.avatarPlaceholder}>
           <Ionicons name="person-outline" size={30} color="#666" />
         </View>
+        </TouchableOpacity>
       </View>
       <Image 
         source={require('../../assets/images/logo_inside1x.png')}

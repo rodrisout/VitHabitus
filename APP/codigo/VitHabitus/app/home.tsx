@@ -1,24 +1,52 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { useEffect } from 'react';
-import { View, ScrollView, StyleSheet } from 'react-native';
-import { Stack } from 'expo-router';
-import BotonAccion from './components/BotonAccion';
+import { View, ScrollView, StyleSheet, RefreshControl } from 'react-native';
+import { Stack, useFocusEffect } from 'expo-router';
+import BotonAccion from './components/ui/BotonAccion';
 import HeaderHome from './components/HeaderHome';
 import SectionsHome from './components/SectionsHome';
 import useAuthRedirect from './components/login/authRedirect';
 
-import { verifyWithApi } from '../services/verifyApi';
+import { verifyWithApi } from '../services/api/verifyApi';
+
 
 export default function HomeScreen() {
   useAuthRedirect();
 
+  const [refreshing, setRefreshing] = useState(false);
+  const [reloadKey, setReloadKey] = useState(0);
+
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    try {
+      await verifyWithApi();
+      setReloadKey(prev => prev + 1);
+
+    } catch (error) {
+      console.error('Error al refrescar:', error);
+    } finally {
+      setRefreshing(false);
+    }
+  }, []);
+
   useEffect(() => {
     verifyWithApi();
   }, []);
+
+   useFocusEffect(
+    useCallback(() => {
+      setReloadKey(prev => prev + 1); 
+    }, [])
+  );
+  
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      <ScrollView style={styles.container}>
+      <ScrollView style={styles.container}
+        contentContainerStyle={styles.contentContainer}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
         <HeaderHome />
 
         {/* Quick Actions Grid */}
@@ -49,7 +77,7 @@ export default function HomeScreen() {
           />
         </View>
 
-        <SectionsHome />
+        <SectionsHome reloadKey={reloadKey}/>
       </ScrollView>
     </>
   );
@@ -58,7 +86,11 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#3e9a6F',
+    backgroundColor: '#f0f8ff',
+  },
+  contentContainer: {
+    flexGrow: 1,
+    paddingBottom: 10, 
   },
   quickActions: {
     flexDirection: 'row',

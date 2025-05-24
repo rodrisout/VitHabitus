@@ -1,6 +1,5 @@
 package com.vithabitus.api.recomendador;
 
-import Launcher.Main;
 import org.apache.commons.jexl3.JexlBuilder;
 import org.apache.commons.jexl3.JexlEngine;
 import org.apache.commons.jexl3.JexlExpression;
@@ -12,7 +11,7 @@ import java.util.regex.Pattern;
 public class Individuo implements Comparable<Individuo>{
     private int[] recorrerCrom = {0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 
-    public static String[] nombres = {"Sexo","Edad","Poblacion","Estudios","Economico","Profesion","Estres","Hdormir","AlcoholDestilado","CopasAlcoholDestilado","AlcoholFermentado","CopasAlcoholFermentado","CopasVinoTinto","CopasVinoBlanco","CopasVinoRosado","Fumador","FumadorConsumo","Pipa","Puros","ExfumadorA","ExfumadorNOSABE","Cancer","CancerMama","CancerColon","CancerProstata","CancerPulmon","CancerOtro","InfartoMiocardio","AnginaPecho","InsuficienciaCardiaca","DiabetesT2","Smetabolico","Apnea","Asma","EPOC","ConsumoAceiteOliva","ConsumoVerdura","ConsumoFruta","ConsumoCarneRoja","ConsumoMantequilla","ConsumoRefrescos","ConsumoLegumbres","ConsumoPescado","ConsumoReposteria","ConsumoFSecos","ConsumoCarneBlanca","ConsumoSofrito","ConsumoLacteo","ConsumoDesnatado","EjercicioIntensoMinutosSemana","EjercicioModeradoMinutosSemana","EjercicioCaminarMinutosSemana","SentadoMinutos"};
+    public static String[] nombres = {"sexo","edad","poblacion","estudios","estEconomico","profesion","estres","horDormir","alcoholDestilado","copasAlcoholDestilado","alcoholFermentado","copasAlcoholFermentado","copasVinoTinto","copasVinoBlanco","copasVinoRosado","fumador","fumadorConsumo","pipa","puros","exfumadorA","exfumadorNOSABE","cancer","cancerMama","cancerColon","cancerProstata","cancerPulmon","cancerOtro","infartoMiocardio","anginaPecho","insuficienciaCardiaca","diabetesT2","sindMetabolico","apnea","asma","EPOC","consumoAceiteOliva","consumoVerdura","consumoFruta","consumoCarne","consumoMantequilla","consumoRefrescos","consumoLegumbres","consumoPescado","consumoReposteria","consumoFSecos","consumoPollo","consumoSofrito","consumoLacteo","consumoDesnatado","ejercicioIntensoMinutosSemana","ejercicioModeradoMinutosSemana","ejercicioCaminadoMinutosSemana","sentadoMinutos"};
 
 
     private final int SLEEP8 = 7, SPIRIT = 8, SPIRIT_W = 9, WINE_BEER = 10, BEER_W = 11, WINE_W = 12, WHITE_W = 13, PINK_W = 14, SMOKE = 15, NUM_SMOKE = 16, PIPE = 17, CIGAR = 18,
@@ -117,8 +116,12 @@ public class Individuo implements Comparable<Individuo>{
     private void calculaFitness(){
         int temp = 0;
         JexlEngine jexl = new JexlBuilder().create();
-        for(int i = 0; i < Main.modelos.size(); i++){
-            String exp = replaceGetVariable(Main.modelos.get(i));
+        
+        if (ModelosServ.modelos == null || ModelosServ.modelos.isEmpty()) {
+            throw new IllegalStateException("Los modelos no están cargados. ¿Se ejecutó @PostConstruct?");
+        }
+        for(int i = 0; i < ModelosServ.modelos.size(); i++){
+            String exp = replaceGetVariable(ModelosServ.modelos.get(i));
             JexlExpression expression = jexl.createExpression(exp);
             Object result = expression.evaluate(null);
             temp += (int) result;

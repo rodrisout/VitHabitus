@@ -3,18 +3,8 @@ import Header from './components/login/Header';
 import FormInput from './components/login/FormInput';
 import { useEffect } from 'react';
 import { BackHandler } from 'react-native';
-import {
-  StyleSheet,
-  SafeAreaView,
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  KeyboardAvoidingView,
-  Platform,
-  Alert,
-} from 'react-native';
-import { signIn } from '../services/authService';
+import {StyleSheet, SafeAreaView, View, Text, TouchableOpacity, ScrollView, KeyboardAvoidingView, Platform, Alert} from 'react-native';
+import { resetPassword, signIn } from '../services/authService';
 import { useRouter } from 'expo-router';
 import {saveSession} from '../services/Session'
 
@@ -50,6 +40,27 @@ export default function LoginScreen() {
       setLoading(false);
     }
   }
+
+  const handleForgotPassword = () => {
+    if (!form.email) {
+      Alert.alert('Campo requerido', 'Por favor, introduce tu correo electrónico primero.');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      Alert.alert('Correo no válido', 'Introduce un correo electrónico válido.');
+      return;
+    }
+
+    resetPassword(form.email)
+      .then(() => {
+        Alert.alert('Correo enviado', 'Revisa tu bandeja de entrada para restablecer la contraseña.');
+      })
+      .catch((error) => {
+        Alert.alert('Error', error.message);
+      });
+  };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#e8ecf4' }}>
@@ -91,7 +102,7 @@ export default function LoginScreen() {
                 </TouchableOpacity>
               </View>
 
-              <TouchableOpacity>
+              <TouchableOpacity onPress={handleForgotPassword}>
                 <Text style={styles.formLink}>Olvidó su contraseña?</Text>
               </TouchableOpacity>
             </View>

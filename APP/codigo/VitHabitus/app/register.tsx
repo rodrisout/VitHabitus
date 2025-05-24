@@ -5,19 +5,19 @@ import { View, Text, StyleSheet, TouchableOpacity, Alert, ScrollView, KeyboardAv
 //components
 import Header from './components/login/Header';
 import FormInput from './components/login/FormInput';
-import PickerComponent from './components/PickerComponent';
+import PickerComponent from './components/ui/PickerComponent';
 import countries from './data/countries.json';
-
 
 //autenticacion
 import { sendEmailVerification } from 'firebase/auth';
 import { signUp} from '../services/authService';
 import { db } from '../services/firebaseConfig';
 import { doc, setDoc } from 'firebase/firestore';
-import EmailVerification from '../app/components/EmailVerfification';
+import EmailVerification from '../app/components/login/EmailVerfification';
 
 //ui
 import LoaderOverlay from '../app/components/ui/Loader';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -30,6 +30,7 @@ export default function Register() {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false); 
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
   
   const handleRegister = async () => {
     setLoading(true);
@@ -39,7 +40,11 @@ export default function Register() {
       setLoading(false);
       return;
     }
-    
+    if (!acceptedTerms) {
+      Alert.alert('Términos y Condiciones', 'Debes aceptar los términos y condiciones para registrarte.');
+      setLoading(false);
+      return;
+    }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       Alert.alert('Correo no válido', 'Introduce un correo electrónico válido.');
@@ -72,7 +77,7 @@ export default function Register() {
         createdAt: new Date(),
       });
       
-      setShowModal(true); // ✅ Mostrar modal de verificación
+      setShowModal(true);
 
     } catch (error: any) {
       Alert.alert('Error al registrar', error.message);
@@ -134,7 +139,19 @@ export default function Register() {
                 secureTextEntry
                 value={form.password}
               />
-
+              <View style={styles.checkboxContainer}>
+                <TouchableOpacity onPress={() => setAcceptedTerms(!acceptedTerms)} style={styles.checkbox}>
+                  <View style={[styles.checkboxBox, acceptedTerms && styles.checkboxChecked]}>
+                    {acceptedTerms && <Ionicons name="checkmark" size={16} color="white" />}
+                  </View>
+                  <Text style={styles.checkboxLabel}>
+                    Acepto los
+                    <Text style={styles.linkText} onPress={() => router.push('/components/login/TerminosCondiciones')}>
+                      {' Términos y Condiciones'}
+                    </Text>
+                  </Text>
+                </TouchableOpacity>
+              </View>
               <View style={styles.formAction}>
                 <TouchableOpacity onPress={handleRegister}>
                   <View style={styles.btn}>
@@ -205,5 +222,48 @@ const styles = StyleSheet.create({
     lineHeight: 26,
     fontWeight: '600',
     color: '#fff',
+  },
+
+  ////////////////////////////////TERMINOS Y CONDICIONES//////////////////////////////////////
+  checkboxContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  checkbox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  checkboxBox: {
+    width: 22,
+    height: 22,
+    marginRight: 10,
+    borderWidth: 1,
+    borderColor: '#075eec',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
+  checkboxChecked: {
+    backgroundColor: '#075eec',
+  },
+  checkboxLabel: {
+    fontSize: 14,
+    flexShrink: 1,
+  },
+  linkText: {
+    color: '#075eec',
+    fontWeight: '600',
+  },
+  checkboxTick: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+    backgroundColor: '#075eec',
+    width: '100%',
+    height: '100%',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    borderRadius: 2,
   },
 });
