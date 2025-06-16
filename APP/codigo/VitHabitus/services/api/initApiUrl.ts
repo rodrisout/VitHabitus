@@ -12,6 +12,7 @@ export const loadApiUrl = async () => {
     } else {
       apiUrl = Constants.expoConfig?.extra?.apiUrl || '';
     }
+    console.log('API URL cargada:', apiUrl);
   } catch (e) {
     console.warn('Fallo obteniendo la API desde Firestore, usando .env', e);
     apiUrl = Constants.expoConfig?.extra?.apiUrl || '';

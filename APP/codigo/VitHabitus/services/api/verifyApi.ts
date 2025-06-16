@@ -13,6 +13,7 @@ export const verifyWithApi = async () => {
   try {
     const idToken = await user.getIdToken();
     await loadApiUrl();
+    console.log("URL de la API:", getApiUrl());
     const response = await fetch(`${getApiUrl()}/api/verify`, {
       method: "GET",
       headers: {

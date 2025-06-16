@@ -154,14 +154,22 @@ export default function HabitsScreen() {
     }
 
     try {
-      const recomendacionesPrevias = await leercampoBD('habitos/recomendacion');
-      const yaHayRecomendaciones =
-        recomendacionesPrevias && Object.keys(recomendacionesPrevias).length > 0;
+
+      let recomendacionesPrevias = null;
+      try {
+        recomendacionesPrevias = await leercampoBD('habitos/recomendacion');
+      } catch (error) {
+       
+        recomendacionesPrevias = null;
+      }
+
+      const yaHayRecomendaciones = recomendacionesPrevias && Object.keys(recomendacionesPrevias).length > 0;
 
       if (yaHayRecomendaciones) {
         setModalTipo('recomendar');
         setModalVisible(true);
-      }else {
+      }
+      else {
         ejecutarRecomendador();
       }
       if(ejecutando) {

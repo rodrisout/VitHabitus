@@ -12,14 +12,18 @@ export default {
     newArchEnabled: true,
     ios: {
       bundleIdentifier: "com.VitHabitus.app2025",
-      supportsTablet: true
+      supportsTablet: true,
+      infoPlist: {
+      ITSAppUsesNonExemptEncryptio: false,
+      },
     },
     android: {
       package: "com.VitHabitus.app2025",
       adaptiveIcon: {
         foregroundImage: "./assets/images/android_logo.png",
         backgroundColor: "#ffffff"
-      }
+      },
+      usesCleartextTraffic: true
     },
     web: {
       bundler: "metro",
