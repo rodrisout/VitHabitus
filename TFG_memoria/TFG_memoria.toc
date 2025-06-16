@@ -1,0 +1,62 @@
+\babel@toc {spanish}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.7}%
+\contentsline {section}{\numberline {1.1}Motivación}{1}{section.8}%
+\contentsline {section}{\numberline {1.2}Objetivos}{2}{section.9}%
+\contentsline {section}{\numberline {1.3}Plan de trabajo}{2}{section.10}%
+\contentsline {subsection}{\numberline {1.3.1}Investigación preliminar}{2}{subsection.11}%
+\contentsline {subsection}{\numberline {1.3.2}Estructura y entorno de desarrollo}{3}{subsection.12}%
+\contentsline {subsection}{\numberline {1.3.3}Autenticación}{3}{subsection.13}%
+\contentsline {subsection}{\numberline {1.3.4}Base de Datos}{3}{subsection.14}%
+\contentsline {subsection}{\numberline {1.3.5}Backend}{3}{subsection.15}%
+\contentsline {subsection}{\numberline {1.3.6}Sincronización}{3}{subsection.16}%
+\contentsline {subsection}{\numberline {1.3.7}Interfaz intuitiva, frontend}{4}{subsection.17}%
+\contentsline {section}{\numberline {1.4}Recomendador de Hábitos Saludables}{4}{section.18}%
+\contentsline {chapter}{Introduction}{5}{chapter*.19}%
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {2}Estado Del Arte}{9}{chapter.20}%
+\contentsline {section}{\numberline {2.1}Habitica}{10}{section.21}%
+\contentsline {section}{\numberline {2.2}Habitify}{11}{section.23}%
+\contentsline {section}{\numberline {2.3}HabitNow}{12}{section.25}%
+\contentsline {section}{\numberline {2.4}INDYA}{12}{section.27}%
+\contentsline {section}{\numberline {2.5}Way of Life}{13}{section.29}%
+\contentsline {section}{\numberline {2.6}Todoist}{13}{section.31}%
+\contentsline {section}{\numberline {2.7}Conclusiones}{14}{section.32}%
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {3}VitHabitus}{15}{chapter.33}%
+\contentsline {section}{\numberline {3.1}Diseño del sistema}{15}{section.34}%
+\contentsline {subsection}{\numberline {3.1.1}Requisitos Funcionales}{15}{subsection.35}%
+\contentsline {subsubsection}{\numberline {3.1.1.1}Autenticación}{15}{subsubsection.36}%
+\contentsline {subsubsection}{\numberline {3.1.1.2}Perfil}{16}{subsubsection.37}%
+\contentsline {subsubsection}{\numberline {3.1.1.3}Hábitos}{16}{subsubsection.38}%
+\contentsline {subsubsection}{\numberline {3.1.1.4}Resultados}{16}{subsubsection.39}%
+\contentsline {subsubsection}{\numberline {3.1.1.5}Notas}{17}{subsubsection.40}%
+\contentsline {subsubsection}{\numberline {3.1.1.6}Calendario}{17}{subsubsection.41}%
+\contentsline {subsection}{\numberline {3.1.2}Especificaciones Técnicas}{17}{subsection.42}%
+\contentsline {subsection}{\numberline {3.1.3}Especificaciones no funcionales}{17}{subsection.43}%
+\contentsline {subsection}{\numberline {3.1.4}Riesgos}{18}{subsection.44}%
+\contentsline {section}{\numberline {3.2}Arquitectura}{18}{section.45}%
+\contentsline {section}{\numberline {3.3}Estructura general}{20}{section.48}%
+\contentsline {section}{\numberline {3.4}Desarrollo de la aplicación móvil}{23}{section.52}%
+\contentsline {subsection}{\numberline {3.4.1}Componentes reutilizables}{25}{subsection.53}%
+\contentsline {subsection}{\numberline {3.4.2}Validación del formulario de Hábitos}{25}{subsection.54}%
+\contentsline {section}{\numberline {3.5}Servicios backend}{26}{section.55}%
+\contentsline {subsection}{\numberline {3.5.1}Base de datos}{26}{subsection.56}%
+\contentsline {subsection}{\numberline {3.5.2}Autenticación Usuarios}{28}{subsection.57}%
+\contentsline {subsection}{\numberline {3.5.3}Api Rest}{28}{subsection.58}%
+\contentsline {subsubsection}{\numberline {3.5.3.1}Recomendador de Hábitos}{29}{subsubsection.59}%
+\contentsline {section}{\numberline {3.6}Caso de uso: Ejemplo completo de evaluación y recomendación}{33}{section.115}%
+\contentsline {subsection}{\numberline {3.6.1}Perfil del usuario}{33}{subsection.116}%
+\contentsline {subsection}{\numberline {3.6.2}Hábitos introducidos en la aplicación}{33}{subsection.117}%
+\contentsline {subsection}{\numberline {3.6.3}Ejecución del recomendador}{34}{subsection.118}%
+\contentsline {subsection}{\numberline {3.6.4}Recomendaciones generadas}{35}{subsection.119}%
+\contentsline {subsection}{\numberline {3.6.5}Visualización en la aplicación}{35}{subsection.120}%
+\contentsline {subsection}{\numberline {3.6.6}Conclusiones del caso}{35}{subsection.122}%
+\contentsline {section}{\numberline {3.7}Tecnologías Utilizadas}{36}{section.123}%
+\contentsline {chapter}{\numberline {4}Conclusiones y Trabajo Futuro}{39}{chapter.124}%
+\contentsline {subsection}{\numberline {4.0.1}Trabajo Futuro}{39}{subsection.125}%
+\contentsline {chapter}{Conclusions and Future Work}{41}{chapter*.126}%
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Bibliograf\'{\i }a}{43}{chapter*.127}%
+\babel@toc {spanish}{}\relax 
